@@ -1,103 +1,71 @@
-import Image from "next/image";
-
+"use client";
+/* eslint-disable @next/next/no-img-element */
+import { useRouter } from "next/navigation";
 export default function Home() {
+  const router = useRouter();
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="gradeint-bg relative h-full w-screen flex items-center justify-center">
+      <div className="absolute top-0 left-0 z-0">
+        <svg
+          width="143"
+          height="165"
+          viewBox="0 0 143 165"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            opacity="0.7"
+            cx="17.5"
+            cy="39.5"
+            r="110.5"
+            stroke="#9955B9"
+            strokeWidth="30"
+          />
+        </svg>
+      </div>
+      <div className="absolute top-1/2 right-0 z-0">
+        <svg
+          width="155"
+          height="251"
+          viewBox="0 0 155 251"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            opacity="0.36"
+            cx="125.5"
+            cy="125.5"
+            r="125.5"
+            fill="#8B55C6"
+          />
+        </svg>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="pt-[15vh] pb-[5vh] relative z-10 flex flex-col justify-between h-full min-h-screen max-w-[500px] items-center">
+        <img
+          src="/images/landing.svg"
+          alt="Landing screen image"
+          className="w-[80vw] mx-[10vw]"
+        />
+        <div className="px-7">
+          <h1 className="heading-h1 xl:!text-3xl text-white">
+            Don&apos;t let disease catch <br />
+            you off guard.
+          </h1>
+          <p className="para-p text-[#F1F6FB] mt-6 xl:!text-lg">
+            Get personalized screening recommendations
+            <br /> and take control of your health.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="px-7 w-full mb-12 mt-6">
+          <button
+            onClick={() => router.push("/app")}
+            className="bg-[#FE9535] cursor-pointer flex w-full py-5 justify-center items-center text-white font-bold text-sm xl:text-lg rounded-2xl"
+          >
+            Let’s Get Started
+          </button>
+        </div>
+      </div>
+    </main>
   );
 }
